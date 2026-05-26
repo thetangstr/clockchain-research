@@ -10,7 +10,11 @@ TOPICS="$PKG_DIR/config/topics.yaml"
 BRIEFS="$REPO_DIR/src/data/briefs"
 
 # All track keys (top-level keys under "tracks:")
-mapfile -t ALL_KEYS < <(awk '
+# Portable to bash 3.2 (macOS default) — no mapfile.
+ALL_KEYS=()
+while IFS= read -r line; do
+  [ -n "$line" ] && ALL_KEYS+=("$line")
+done < <(awk '
   /^tracks:/ {in_tracks=1; next}
   in_tracks && /^  [a-z][a-z0-9-]*:/ {
     sub(/:.*/,""); sub(/^  /,""); print
@@ -22,7 +26,10 @@ if [ "${#ALL_KEYS[@]}" -eq 0 ]; then
 fi
 
 # Last 2 brief files by slug (newest first)
-mapfile -t LATEST_BRIEFS < <(ls -1 "$BRIEFS" 2>/dev/null | grep -v '^\.gitkeep$' | sort -r | head -2)
+LATEST_BRIEFS=()
+while IFS= read -r line; do
+  [ -n "$line" ] && LATEST_BRIEFS+=("$line")
+done < <(ls -1 "$BRIEFS" 2>/dev/null | grep -v '^\.gitkeep$' | sort -r | head -2)
 
 # Match each track's keywords against the last 2 brief slugs.
 # A track is "covered" if ANY keyword from its keywords list appears in EITHER recent slug.
