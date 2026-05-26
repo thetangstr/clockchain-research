@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  launchd plist for the Clockchain Research Brief generator.
+
+  Schedule: every Tuesday and Friday at 7:00am America/Los_Angeles.
+
+  IMPORTANT: launchd does not natively support timezones. The Hour value below is
+  in the system's LOCAL time. If your Mac Mini is set to America/Los_Angeles, leave
+  Hour=7. If the Mini is in a different timezone, adjust accordingly.
+
+  RunAtLoad is FALSE so loading the plist does not fire it immediately. To trigger a
+  manual test run after loading, use:    launchctl start com.clockchain.research-brief
+
+  Install:
+    cp agents/research-brief/schedule/com.clockchain.research-brief.plist ~/Library/LaunchAgents/
+    # Edit the plist to set REPO_PATH to your actual clone path before loading!
+    launchctl load ~/Library/LaunchAgents/com.clockchain.research-brief.plist
+
+  Uninstall:
+    launchctl unload ~/Library/LaunchAgents/com.clockchain.research-brief.plist
+    rm ~/Library/LaunchAgents/com.clockchain.research-brief.plist
+
+  Logs:
+    ~/Library/Logs/clockchain-brief.{out,err}.log
+    agents/research-brief/.logs/<DATE>-run.log
+-->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.clockchain.research-brief</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>-lc</string>
+    <!-- EDIT THIS: replace REPO_PATH with the actual absolute path to your clone -->
+    <string>cd "$HOME/clockchain-research" &amp;&amp; CLOCKCHAIN_BRIEF_NONINTERACTIVE=1 ./agents/research-brief/scripts/run-brief.sh</string>
+  </array>
+
+  <key>StartCalendarInterval</key>
+  <array>
+    <!-- Tuesday at 07:00 local time -->
+    <dict>
+      <key>Weekday</key><integer>2</integer>
+      <key>Hour</key><integer>7</integer>
+      <key>Minute</key><integer>0</integer>
+    </dict>
+    <!-- Friday at 07:00 local time -->
+    <dict>
+      <key>Weekday</key><integer>5</integer>
+      <key>Hour</key><integer>7</integer>
+      <key>Minute</key><integer>0</integer>
+    </dict>
+  </array>
+
+  <key>RunAtLoad</key>
+  <false/>
+
+  <key>StandardOutPath</key>
+  <string>/tmp/clockchain-brief.out.log</string>
+  <key>StandardErrorPath</key>
+  <string>/tmp/clockchain-brief.err.log</string>
+
+  <!-- Make sure /opt/homebrew/bin is in PATH so brew-installed gh, yt-dlp, etc. resolve. -->
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key>
+    <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    <key>HOME</key>
+    <string>/Users/REPLACE_WITH_YOUR_USERNAME</string>
+  </dict>
+
+  <!-- Process behaviour -->
+  <key>ProcessType</key>
+  <string>Background</string>
+  <key>Nice</key>
+  <integer>1</integer>
+</dict>
+</plist>

@@ -1,0 +1,10 @@
+# Skill local state — never committed
+*.db
+*.sqlite
+__pycache__/
+*.pyc
+.pytest_cache/
+node_modules/
+GITIGNORE_EOF
+echo "TOOLS_GITIGNORE_WRITTEN"
+ls "$REPO/agents/research-brief/scripts/" "$REPO/agents/research-brief/schedule/"

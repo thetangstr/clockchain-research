@@ -1,0 +1,8 @@
+# Local secrets — never committed
+.env
+
+# Run logs
+.logs/
+
+# OS junk
+.DS_Store

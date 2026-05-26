@@ -1,0 +1,60 @@
+# Topic rotation for the Clockchain Research brief generator.
+# scripts/pick-topic.sh reads the last 2 briefs in src/data/briefs/ and
+# picks a topic key NOT used in those briefs (round-robin within the eligible set).
+# Add or remove tracks freely. Keys must be lowercase-with-dashes.
+
+tracks:
+  agent-identity-and-did:
+    title: Agent identity, DIDs, and cryptographic agent provenance
+    queries:
+      - "W3C DID spec agent identity did:web did:key 2026"
+      - "agent passport cryptographic birth certificate 2026"
+      - "EAS Ethereum Attestation Service agent identity 2026"
+      - "Verax attestation protocol agent 2026"
+      - "ENS for agents on-chain agent naming 2026"
+      - "Story Protocol agent rights on-chain permissions 2026"
+    keywords: [did, did-web, did-key, agent-identity, agent-passport, eas, verax, ens, story-protocol, attestation]
+
+  agent-frameworks-and-sdks:
+    title: Agent frameworks, SDKs, and observability hooks
+    queries:
+      - "LangChain LangGraph agent observability 2026"
+      - "AutoGPT CrewAI AutoGen agent framework 2026"
+      - "Model Context Protocol MCP servers 2026"
+      - "Anthropic Agent SDK OpenAI Agents SDK 2026"
+      - "LlamaIndex agent tracing callback 2026"
+      - "agent SDK five lines to first log 2026"
+    keywords: [langchain, langgraph, autogpt, crewai, autogen, llamaindex, mcp, agent-sdk, anthropic-sdk, openai-sdk, observability]
+
+  on-chain-agent-economy:
+    title: On-chain agent economy, payments, and credits
+    queries:
+      - "x402 payment protocol agent 2026"
+      - "Coinbase agent payments Skyfire 2026"
+      - "agent credit system reputation autonomous 2026"
+      - "agent-to-agent commerce treasury 2026"
+      - "stablecoin agent payment rails 2026"
+      - "autonomous agent wallet custody 2026"
+    keywords: [x402, coinbase-agent, skyfire, agent-payment, agent-credit, agent-treasury, agent-commerce, a2a-payments]
+
+  blockchain-time-and-attestation:
+    title: Blockchain time, verifiable timestamps, and AI attestation
+    queries:
+      - "Chainlink Functions AI verification 2026"
+      - "verifiable timestamp AI output audit trail 2026"
+      - "ZK proof agent execution zkML 2026"
+      - "on-chain audit trail AI compliance 2026"
+      - "EAS attestation pattern AI output 2026"
+      - "verifiable inference proof agent 2026"
+    keywords: [chainlink-functions, verifiable-timestamp, zkml, zk-proof, audit-trail, attestation, verifiable-inference, ai-compliance]
+
+  agent-security-and-trust:
+    title: Agent security, trust, and regulatory pressure
+    keywords: [agent-security, prompt-injection, agent-permission, mitre-atlas, eu-ai-act, soc2-agents, agent-auth, a2a-auth, agent-rights]
+    queries:
+      - "agent-to-agent authentication cryptographic 2026"
+      - "prompt injection defense agent identity 2026"
+      - "on-chain agent permission policy 2026"
+      - "MITRE ATLAS agent threat model 2026"
+      - "EU AI Act agent compliance audit 2026"
+      - "SOC 2 for agents accountability 2026"

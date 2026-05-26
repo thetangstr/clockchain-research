@@ -1,0 +1,137 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://clockchain-research.vercel.app/schemas/brief.schema.json",
+  "title": "Brief",
+  "description": "A voice-optimized research brief generated twice a week by the Clockchain Research Brief agent. Renders into the /brief route of clockchain-research.",
+  "type": "object",
+  "required": [
+    "slug",
+    "title",
+    "dek",
+    "date",
+    "dayOfWeek",
+    "readTimeMinutes",
+    "tldr",
+    "sections",
+    "nextUp",
+    "sources"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "slug": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}-[a-z0-9-]+$",
+      "description": "Filename stem. Format: YYYY-MM-DD-<short-slug>. Must equal the JSON filename without .json."
+    },
+    "title": {
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 110,
+      "description": "Voice-readable headline. Under 90 chars preferred. Often ends with an em-dash phrase."
+    },
+    "dek": {
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 280,
+      "description": "One-sentence subhead framing the argument. UI-rendered; numerals are OK here."
+    },
+    "date": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+      "description": "ISO date. Used as the primary sort key (newest first) on the index page."
+    },
+    "dayOfWeek": {
+      "type": "string",
+      "enum": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "description": "Display only. Typically 'Tuesday' or 'Friday' for scheduled briefs."
+    },
+    "readTimeMinutes": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 30,
+      "description": "Realistic minutes-to-read; 6-10 typical."
+    },
+    "topic": {
+      "type": "string",
+      "enum": [
+        "agent-identity-and-did",
+        "agent-frameworks-and-sdks",
+        "on-chain-agent-economy",
+        "blockchain-time-and-attestation",
+        "agent-security-and-trust"
+      ],
+      "description": "One of the five rotation tracks from config/topics.yaml."
+    },
+    "tldr": {
+      "type": "string",
+      "minLength": 600,
+      "maxLength": 2000,
+      "description": "150-250 words of spoken-style prose. Short sentences. No lists. Spell out numbers as words ('thirty percent' not '30%')."
+    },
+    "briefAlso": {
+      "type": "boolean",
+      "description": "When true, render as a brief-only card (no full article) on the index page."
+    },
+    "sections": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 8,
+      "description": "4-6 sections is the target. Each has a short heading and a body of 4-8 sentences of prose. NO bullets, tables, or numbered lists in body copy. The LAST section MUST be 'What this means for our agent products'.",
+      "items": {
+        "type": "object",
+        "required": ["heading", "body"],
+        "additionalProperties": false,
+        "properties": {
+          "heading": {
+            "type": "string",
+            "minLength": 4,
+            "maxLength": 80,
+            "description": "Short noun phrase or natural spoken cue. Example: 'What this means for our agent products'."
+          },
+          "body": {
+            "type": "string",
+            "minLength": 200,
+            "description": "Prose paragraphs only. NO bullets, tables, or numbered lists. Numbers spelled out as words."
+          }
+        }
+      }
+    },
+    "keyPoints": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 7,
+      "description": "3-5 short declarative sentences for quick recall. UI-rendered; numerals OK here.",
+      "items": {
+        "type": "string",
+        "minLength": 20,
+        "maxLength": 280
+      }
+    },
+    "nextUp": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "description": "Exactly 3 follow-up questions, each phrased exactly as the user would speak it aloud to a voice agent.",
+      "items": {
+        "type": "string",
+        "minLength": 15,
+        "maxLength": 200
+      }
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 15,
+      "description": "6-10 real URLs with descriptive titles. Real sources only.",
+      "items": {
+        "type": "object",
+        "required": ["title", "url"],
+        "additionalProperties": false,
+        "properties": {
+          "title": { "type": "string", "minLength": 4, "maxLength": 200 },
+          "url": { "type": "string", "format": "uri", "pattern": "^https?://" }
+        }
+      }
+    }
+  }
+}
