@@ -54,13 +54,28 @@
     "topic": {
       "type": "string",
       "enum": [
+        "customer-profile-langchain-langsmith",
+        "customer-profile-anthropic-agent-sdk",
+        "customer-profile-openai-agents-sdk",
+        "customer-profile-oss-agent-frameworks",
+        "customer-profile-agent-observability-vendors",
+        "customer-profile-embedded-agent-products",
+        "use-case-financial-audit-trails",
+        "use-case-healthcare-clinical-logs",
+        "use-case-cybersecurity-incident-response",
+        "use-case-legal-contract-automation",
+        "use-case-regulated-saas-internal-agents",
+        "standards-eu-ai-act-implementation",
+        "standards-electronic-timestamping",
+        "standards-agent-identity-passports",
+        "standards-agent-economy-and-rights",
         "agent-identity-and-did",
         "agent-frameworks-and-sdks",
         "on-chain-agent-economy",
         "blockchain-time-and-attestation",
         "agent-security-and-trust"
       ],
-      "description": "One of the five rotation tracks from config/topics.yaml."
+      "description": "One of the rotation tracks from config/topics.yaml. Three buckets: customer-profile-*, use-case-*, standards-*. Legacy track keys retained so older briefs remain valid."
     },
     "tldr": {
       "type": "string",

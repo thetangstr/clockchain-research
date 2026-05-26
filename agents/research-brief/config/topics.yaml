@@ -1,60 +1,196 @@
 # Topic rotation for the Clockchain Research brief generator.
-# scripts/pick-topic.sh reads the last 2 briefs in src/data/briefs/ and
-# picks a topic key NOT used in those briefs (round-robin within the eligible set).
-# Add or remove tracks freely. Keys must be lowercase-with-dashes.
+#
+# Each brief is built to drive PRODUCT DEFINITION for Yang's two trust-layer
+# products (on-chain agent identity + Clockchain Agent-SDK) plus the two
+# stretch products (agent credits, agent smart receipts).
+#
+# Three buckets, fifteen topics. pick-topic.sh rotates across them and skips
+# any topic that appeared in the last two briefs. Briefs land Tue + Fri 7am PT.
+#
+# Adding or removing topics is safe — just keep keys lowercase-with-dashes and
+# update the topic enum in schema/brief.schema.json to match.
 
 tracks:
-  agent-identity-and-did:
-    title: Agent identity, DIDs, and cryptographic agent provenance
-    queries:
-      - "W3C DID spec agent identity did:web did:key 2026"
-      - "agent passport cryptographic birth certificate 2026"
-      - "EAS Ethereum Attestation Service agent identity 2026"
-      - "Verax attestation protocol agent 2026"
-      - "ENS for agents on-chain agent naming 2026"
-      - "Story Protocol agent rights on-chain permissions 2026"
-    keywords: [did, did-web, did-key, agent-identity, agent-passport, eas, verax, ens, story-protocol, attestation]
+  # ──────────────────────────────────────────────────────────────────────
+  # BUCKET 1 — Customer-profile briefs (~40% of rotation)
+  # Pick one specific company or product. Dissect their current observability
+  # stack, gap against EU AI Act + court-admissibility, and the integration
+  # shape Clockchain would have to ship for them.
+  # ──────────────────────────────────────────────────────────────────────
 
-  agent-frameworks-and-sdks:
-    title: Agent frameworks, SDKs, and observability hooks
+  customer-profile-langchain-langsmith:
+    bucket: customer-profile
+    title: LangChain and LangSmith — the dominant agent observability stack
     queries:
-      - "LangChain LangGraph agent observability 2026"
-      - "AutoGPT CrewAI AutoGen agent framework 2026"
-      - "Model Context Protocol MCP servers 2026"
-      - "Anthropic Agent SDK OpenAI Agents SDK 2026"
+      - "LangSmith observability EU AI Act compliance 2026"
+      - "LangChain LangGraph callback handler audit trail 2026"
+      - "LangSmith data residency BYOC self-hosted 2026"
+      - "LangGraph interrupt human-in-the-loop article 14 2026"
+      - "LangChain enterprise audit logging tamper evident"
+    keywords: [langchain, langsmith, langgraph, callback-handler, observability, eu-ai-act]
+
+  customer-profile-anthropic-agent-sdk:
+    bucket: customer-profile
+    title: Anthropic Agent SDK and Claude Code managed agents
+    queries:
+      - "Anthropic Agent SDK observability tracing 2026"
+      - "Claude Code managed agents enterprise audit 2026"
+      - "Anthropic computer use agent logging compliance 2026"
+      - "Claude agent skills permissions audit trail 2026"
+      - "Anthropic enterprise customer audit requirements"
+    keywords: [anthropic, claude-code, agent-sdk, claude-agents, skills, computer-use]
+
+  customer-profile-openai-agents-sdk:
+    bucket: customer-profile
+    title: OpenAI Agents SDK and Assistants API
+    queries:
+      - "OpenAI Agents SDK tracing observability 2026"
+      - "OpenAI Assistants API audit logs enterprise 2026"
+      - "OpenAI agent runs compliance logging EU 2026"
+      - "OpenAI computer-using agent audit trail 2026"
+      - "OpenAI enterprise SOC 2 AI compliance"
+    keywords: [openai, agents-sdk, assistants-api, computer-use, enterprise-compliance]
+
+  customer-profile-oss-agent-frameworks:
+    bucket: customer-profile
+    title: Open-source agent frameworks — CrewAI, AutoGen, LlamaIndex, Letta
+    queries:
+      - "CrewAI agent framework observability 2026"
+      - "AutoGen multi-agent audit logging 2026"
       - "LlamaIndex agent tracing callback 2026"
-      - "agent SDK five lines to first log 2026"
-    keywords: [langchain, langgraph, autogpt, crewai, autogen, llamaindex, mcp, agent-sdk, anthropic-sdk, openai-sdk, observability]
+      - "Letta agent memory audit trail 2026"
+      - "OSS agent framework enterprise compliance"
+    keywords: [crewai, autogen, llamaindex, letta, mem0, agent-framework]
 
-  on-chain-agent-economy:
-    title: On-chain agent economy, payments, and credits
+  customer-profile-agent-observability-vendors:
+    bucket: customer-profile
+    title: Agent observability vendors — Helicone, Phoenix, Arize, OpenLLMetry, Datadog APM
     queries:
-      - "x402 payment protocol agent 2026"
-      - "Coinbase agent payments Skyfire 2026"
-      - "agent credit system reputation autonomous 2026"
-      - "agent-to-agent commerce treasury 2026"
-      - "stablecoin agent payment rails 2026"
-      - "autonomous agent wallet custody 2026"
-    keywords: [x402, coinbase-agent, skyfire, agent-payment, agent-credit, agent-treasury, agent-commerce, a2a-payments]
+      - "Helicone agent observability 2026"
+      - "Phoenix Arize agent tracing 2026"
+      - "OpenLLMetry OpenTelemetry agent semantic conventions 2026"
+      - "Datadog APM agent tracing 2026"
+      - "agent observability tamper evident audit log 2026"
+    keywords: [helicone, phoenix, arize, openllmetry, datadog, otel, observability]
 
-  blockchain-time-and-attestation:
-    title: Blockchain time, verifiable timestamps, and AI attestation
+  customer-profile-embedded-agent-products:
+    bucket: customer-profile
+    title: Products embedding agent SDKs — Notion AI, Linear AI, Slack AI, Cursor, Warp
     queries:
-      - "Chainlink Functions AI verification 2026"
-      - "verifiable timestamp AI output audit trail 2026"
-      - "ZK proof agent execution zkML 2026"
-      - "on-chain audit trail AI compliance 2026"
-      - "EAS attestation pattern AI output 2026"
-      - "verifiable inference proof agent 2026"
-    keywords: [chainlink-functions, verifiable-timestamp, zkml, zk-proof, audit-trail, attestation, verifiable-inference, ai-compliance]
+      - "Notion AI Claude Code integration audit 2026"
+      - "Linear AI agent automation enterprise audit 2026"
+      - "Slack AI agent logging enterprise 2026"
+      - "Cursor agent workspace audit trail 2026"
+      - "Warp terminal AI agent enterprise compliance 2026"
+    keywords: [notion, linear, slack, cursor, warp, embedded-agent, integration]
 
-  agent-security-and-trust:
-    title: Agent security, trust, and regulatory pressure
-    keywords: [agent-security, prompt-injection, agent-permission, mitre-atlas, eu-ai-act, soc2-agents, agent-auth, a2a-auth, agent-rights]
+  # ──────────────────────────────────────────────────────────────────────
+  # BUCKET 2 — Use-case briefs (~30% of rotation)
+  # Pick one regulated use case. Work out the evidentiary standard, who pays,
+  # and what Product A + B need to look like to serve that segment.
+  # ──────────────────────────────────────────────────────────────────────
+
+  use-case-financial-audit-trails:
+    bucket: use-case
+    title: Financial-services agent audit trails — SOX, SEC 17a-4, MiFID II, FINRA
     queries:
-      - "agent-to-agent authentication cryptographic 2026"
-      - "prompt injection defense agent identity 2026"
-      - "on-chain agent permission policy 2026"
-      - "MITRE ATLAS agent threat model 2026"
-      - "EU AI Act agent compliance audit 2026"
-      - "SOC 2 for agents accountability 2026"
+      - "SEC 17a-4 immutable audit record AI agent 2026"
+      - "MiFID II transaction reporting AI agent 2026"
+      - "SOX 404 controls AI agent automation 2026"
+      - "FINRA AI agent record keeping 2026"
+      - "financial agent compliance audit trail blockchain 2026"
+    keywords: [sox, sec-17a-4, mifid-ii, finra, financial-audit, regulated-finance]
+
+  use-case-healthcare-clinical-logs:
+    bucket: use-case
+    title: Healthcare and clinical-decision agent logs — HIPAA, FDA, EHR
+    queries:
+      - "HIPAA audit trail AI agent clinical decision 2026"
+      - "FDA AI ML clinical decision support good machine learning practice 2026"
+      - "EHR agent audit log Epic Cerner 2026"
+      - "clinical AI agent provenance traceability 2026"
+      - "healthcare AI agent compliance audit 2026"
+    keywords: [hipaa, fda-ai-ml, ehr, clinical-decision, healthcare-agent, gmlp]
+
+  use-case-cybersecurity-incident-response:
+    bucket: use-case
+    title: Cybersecurity SOC agents and incident response — MITRE ATLAS, Zyberpol-style
+    queries:
+      - "SOC agent automation incident response audit 2026"
+      - "MITRE ATLAS AI agent threat model 2026"
+      - "cybersecurity AI agent chain of custody 2026"
+      - "Splunk CrowdStrike agent automation audit 2026"
+      - "agent forensics tamper evident log 2026"
+    keywords: [soc, siem, splunk, crowdstrike, mitre-atlas, incident-response, cyber-forensics]
+
+  use-case-legal-contract-automation:
+    bucket: use-case
+    title: Legal contract automation and eDiscovery — judicial admissibility
+    queries:
+      - "AI contract automation legal admissibility 2026"
+      - "eDiscovery AI agent provenance custody 2026"
+      - "legal AI agent attorney work product audit 2026"
+      - "smart contract dispute resolution AI 2026"
+      - "legal tech AI agent compliance"
+    keywords: [legal-tech, ediscovery, contract-automation, judicial-admissibility, smart-contract]
+
+  use-case-regulated-saas-internal-agents:
+    bucket: use-case
+    title: Internal agents inside regulated B2B SaaS — Salesforce Agentforce, ServiceNow, SAP Joule
+    queries:
+      - "Salesforce Agentforce enterprise audit log 2026"
+      - "ServiceNow agent automation compliance 2026"
+      - "SAP Joule enterprise AI audit 2026"
+      - "regulated SaaS internal agent governance 2026"
+      - "enterprise agent platform compliance audit 2026"
+    keywords: [agentforce, servicenow, sap-joule, microsoft-agent-365, enterprise-agent]
+
+  # ──────────────────────────────────────────────────────────────────────
+  # BUCKET 3 — Standards / competitive briefs (~30% of rotation)
+  # Track the regulatory clock, established legal standards, and direct
+  # competitive products in the agent-identity and timestamping space.
+  # ──────────────────────────────────────────────────────────────────────
+
+  standards-eu-ai-act-implementation:
+    bucket: standards-competitive
+    title: EU AI Act implementation clock — Article 12, 13, 14, 15, 50, 72
+    queries:
+      - "EU AI Act Article 12 logging requirement 2026"
+      - "EU AI Act Article 13 transparency deployer 2026"
+      - "EU AI Act Article 72 post-market monitoring 2026"
+      - "EU AI Act August 2026 deadline high-risk 2026"
+      - "AI Act enforcement penalty fine 2026"
+    keywords: [eu-ai-act, article-12, article-13, article-72, august-2-2026, gpai]
+
+  standards-electronic-timestamping:
+    bucket: standards-competitive
+    title: Electronic timestamping legal standards — eIDAS 2.0, RFC 3161, ISO/IEC 18014, ESIGN
+    queries:
+      - "eIDAS 2.0 qualified electronic timestamp AI 2026"
+      - "RFC 3161 timestamp authority blockchain 2026"
+      - "ISO IEC 18014 timestamping AI compliance 2026"
+      - "ESIGN Act electronic signature AI agent 2026"
+      - "qualified trust service provider AI 2026"
+    keywords: [eidas, rfc-3161, iso-18014, esign, qtsp, electronic-signature]
+
+  standards-agent-identity-passports:
+    bucket: standards-competitive
+    title: Agent identity and passport standards — ERC-8004, Kite, RNWY, World ID
+    queries:
+      - "ERC-8004 trustless agent identity 2026"
+      - "Kite agent passport payments 2026"
+      - "RNWY soulbound agent passport 2026"
+      - "World ID agentkit AI verification 2026"
+      - "did:agent decentralized identifier 2026"
+    keywords: [erc-8004, kite, rnwy, world-id, did-agent, agent-passport]
+
+  standards-agent-economy-and-rights:
+    bucket: standards-competitive
+    title: Agent economy and rights frameworks — x402, Skyfire, Story Protocol, agent treasuries
+    queries:
+      - "x402 agent payment protocol adoption 2026"
+      - "Skyfire agent payments 2026"
+      - "Story Protocol agent rights on-chain 2026"
+      - "autonomous agent treasury wallet custody 2026"
+      - "a16z KYA know your agent framework"
+    keywords: [x402, skyfire, story-protocol, agent-economy, kya, agent-treasury]
