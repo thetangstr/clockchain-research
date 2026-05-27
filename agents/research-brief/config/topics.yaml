@@ -4,7 +4,7 @@
 # products (on-chain agent identity + Clockchain Agent-SDK) plus the two
 # stretch products (agent credits, agent smart receipts).
 #
-# Three buckets, fifteen topics. pick-topic.sh rotates across them and skips
+# Three buckets, sixteen topics. pick-topic.sh rotates across them and skips
 # any topic that appeared in the last two briefs. Briefs land Tue + Fri 7am PT.
 #
 # Adding or removing topics is safe — just keep keys lowercase-with-dashes and
@@ -12,11 +12,22 @@
 
 tracks:
   # ──────────────────────────────────────────────────────────────────────
-  # BUCKET 1 — Customer-profile briefs (~40% of rotation)
+  # BUCKET 1 — Customer-profile briefs (~45% of rotation)
   # Pick one specific company or product. Dissect their current observability
   # stack, gap against EU AI Act + court-admissibility, and the integration
   # shape Clockchain would have to ship for them.
   # ──────────────────────────────────────────────────────────────────────
+
+  customer-profile-agentdash-validation:
+    bucket: customer-profile
+    title: AgentDash — sister product and design partner of record for Products A and B
+    queries:
+      - "AgentDash CoS multi-human agent workspace 2026"
+      - "Paperclip agent harness adapters audit"
+      - "AgentDash plugin worker SDK integration"
+      - "AgentDash enterprise audit log compliance"
+      - "multi-agent dispatch CoS pattern identity"
+    keywords: [agentdash, paperclip, cos, multi-human, adapter, sister-product]
 
   customer-profile-langchain-langsmith:
     bucket: customer-profile
@@ -146,7 +157,7 @@ tracks:
     keywords: [agentforce, servicenow, sap-joule, microsoft-agent-365, enterprise-agent]
 
   # ──────────────────────────────────────────────────────────────────────
-  # BUCKET 3 — Standards / competitive briefs (~30% of rotation)
+  # BUCKET 3 — Standards / competitive briefs (~25% of rotation)
   # Track the regulatory clock, established legal standards, and direct
   # competitive products in the agent-identity and timestamping space.
   # ──────────────────────────────────────────────────────────────────────

@@ -32,7 +32,12 @@ Briefs that only describe the market without advancing those two answers are not
 3. **The gold reference brief**: the seed brief in `agents/research-brief/examples/`. Match this voice and structure.
 4. **The schema**: `agents/research-brief/schema/brief.schema.json`. Validate mentally as you write.
 5. **The style rules**: `agents/research-brief/style.md`. Re-read every run.
-6. **The Clockchain context**: `agents/research-brief/context/clockchain-overview.md` and `agents/research-brief/context/products-overview.md`. Public-safe wording only.
+6. **The product context** (load all four — they are short and load-bearing):
+   - `agents/research-brief/context/clockchain-overview.md` — public Clockchain capability surface.
+   - `agents/research-brief/context/products-overview.md` — Product A, Product B, stretch products, customer archetypes.
+   - `agents/research-brief/context/product-baseline.md` — **current working layer breakdown for Product A (A1-A6) and Product B (B1-B6) plus the baseline version.** Every tie-back refers to specific layers by their letter+number identifier (e.g., "this sharpens B1 Capture Layer").
+   - `agents/research-brief/context/inflection-points.md` — **the seven live strategic forks the research is trying to resolve.** Every brief must advance at least one inflection point with new evidence.
+   - `agents/research-brief/context/agentdash-sister-product.md` — AgentDash is the design-partner-of-record. Every relevant brief asks "how would AgentDash absorb this finding?"
 7. **The two most recent briefs**: list `src/data/briefs/`, sort descending, read the top two. Avoid repeating their topics or framings.
 
 ## Your output
@@ -117,7 +122,12 @@ The tie-back lands on a **positioning move** — e.g., "Publish a Clockchain-as-
 3. **Group the supporting evidence into 3-4 themes.** Each theme becomes a section.
 4. **Write the TL;DR first.** 150-250 words, spoken style. Numbers as words. Lead with the headline finding.
 5. **Write each section in order.** Each opens with a topic sentence, then 4-8 prose sentences of evidence and reasoning. No bullets, no tables, no numbered lists in body copy.
-6. **Write the mandatory "What this means for our agent products" section as the LAST section.** This is where the brief earns its keep. Tie the week's findings into a **specific, actionable product implication** — a feature, integration shape, design-partner target, or positioning move. Reference Product A, Product B, agent credits, or agent smart receipts by name. End with one sentence that begins "The right next move is…" and names a concrete action.
+6. **Write the mandatory "What this means for our agent products" section as the LAST section.** This is where the brief earns its keep. The section MUST do three things:
+    1. **Refine the baseline.** Cite at least one Product A or Product B layer by its identifier (A1-A6, B1-B6) and explain how this brief's evidence sharpens, extends, or challenges that layer's current definition in `product-baseline.md`.
+    2. **Advance an inflection point.** Name one of the seven live inflection points from `inflection-points.md` and explain which side gained evidence in this brief and why. Phrase it explicitly: *"This advances Inflection Point N — <title> — toward the <side> side because…"*
+    3. **Map to AgentDash.** When the topic plausibly applies, ask "how would AgentDash absorb this?" and answer in one or two sentences using the layer table in `agentdash-sister-product.md`. If the topic is clearly outside AgentDash's scope (e.g., a brief on FDA clinical-decision logs), state that explicitly in one sentence and move on.
+    
+    End with one sentence that begins **"The right next move is…"** and names a concrete action — a feature, integration shape, design-partner target, or positioning move.
 7. **Write `keyPoints`**: 3-5 declarative sentences. UI text — numerals OK.
 8. **Write `nextUp`**: exactly 3 follow-up questions, each phrased as the user would speak them aloud.
 9. **Pick `sources`**: 6-10 real URLs from the raw research that you actually drew from. Drop low-quality or marketing-heavy sources. Prefer protocol specs, vendor engineering blogs, regulatory text, analyst coverage, and primary research.

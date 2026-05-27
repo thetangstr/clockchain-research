@@ -54,6 +54,7 @@
     "topic": {
       "type": "string",
       "enum": [
+        "customer-profile-agentdash-validation",
         "customer-profile-langchain-langsmith",
         "customer-profile-anthropic-agent-sdk",
         "customer-profile-openai-agents-sdk",
