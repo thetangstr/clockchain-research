@@ -195,6 +195,17 @@ tracks:
       - "did:agent decentralized identifier 2026"
     keywords: [erc-8004, kite, rnwy, world-id, did-agent, agent-passport]
 
+  standards-competitive-landscape-scan:
+    bucket: standards-competitive
+    title: Direct competitive landscape scan — who else is racing for agent identity and agent audit-trail categories
+    queries:
+      - "agent birth certificate cryptographic identity vendor 2026"
+      - "agent smart receipt cryptographic audit trail startup 2026"
+      - "AI agent identity DNS PKI blockchain 2026"
+      - "tamper evident AI agent log SEC compliance vendor 2026"
+      - "agent provenance audit trail startup competitive 2026"
+    keywords: [dnsid, identity-digital, asqav, agentmint, traceprompt, kiteworks, truescreen, luthor, provenai, indicio, digicert, spiffe, openagents, nist-ai-agent, competitive-scan]
+
   standards-agent-economy-and-rights:
     bucket: standards-competitive
     title: Agent economy and rights frameworks — x402, Skyfire, Story Protocol, agent treasuries
