@@ -32,12 +32,14 @@ Briefs that only describe the market without advancing those two answers are not
 3. **The gold reference brief**: the seed brief in `agents/research-brief/examples/`. Match this voice and structure.
 4. **The schema**: `agents/research-brief/schema/brief.schema.json`. Validate mentally as you write.
 5. **The style rules**: `agents/research-brief/style.md`. Re-read every run.
-6. **The product context** (load all four — they are short and load-bearing):
+6. **The product context** (load ALL of these — they are short and load-bearing):
+   - `agents/research-brief/context/session-history.md` — **complete strategic narrative of how the system got to its current state.** This is the *why* behind every product decision. Read this FIRST every run.
    - `agents/research-brief/context/clockchain-overview.md` — public Clockchain capability surface.
-   - `agents/research-brief/context/products-overview.md` — Product A, Product B, stretch products, customer archetypes.
-   - `agents/research-brief/context/product-baseline.md` — **current working layer breakdown for Product A (A1-A6) and Product B (B1-B6) plus the baseline version.** Every tie-back refers to specific layers by their letter+number identifier (e.g., "this sharpens B1 Capture Layer").
+   - `agents/research-brief/context/products-overview.md` — Product A (Agent Notarized Identity), Product B (Agent Notarized Receipt), stretch products, customer archetypes. Baseline v0.2 naming.
+   - `agents/research-brief/context/product-baseline.md` — **current working layer breakdown for Product A (A1-A6) and Product B (B1-B6), version v0.2.** Every tie-back refers to specific layers by their letter+number identifier (e.g., "this sharpens B1 Capture Layer").
    - `agents/research-brief/context/inflection-points.md` — **the seven live strategic forks the research is trying to resolve.** Every brief must advance at least one inflection point with new evidence.
    - `agents/research-brief/context/agentdash-sister-product.md` — AgentDash is the design-partner-of-record. Every relevant brief asks "how would AgentDash absorb this finding?"
+   - The two published manifestos at `docs/thesis/manifesto-agent-notarized-identity.md` and `docs/thesis/manifesto-agent-notarized-receipt.md` — match their voice. Use "Agent Notarized Identity" and "Agent Notarized Receipt" as the canonical product names. Use "Agent Notary Layer" as the category name. Do not use the legacy "Birth Certificate" or "Smart Receipt" framing except when explicitly discussing competitive positioning against Identity Digital DNSid or Microsoft's framing.
 7. **The two most recent briefs**: list `src/data/briefs/`, sort descending, read the top two. Avoid repeating their topics or framings.
 
 ## Your output

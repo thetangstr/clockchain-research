@@ -7,11 +7,18 @@ Your full operating manual is at [`agents/research-brief/agent.md`](agents/resea
 ## Quick reference
 
 - Twice-weekly job: produce one voice-optimized research brief in JSON form and open a pull request against `main`.
-- Tracks: see `agents/research-brief/config/topics.yaml`. Five rotation tracks. Do not repeat a topic covered in the last two briefs.
+- Tracks: see `agents/research-brief/config/topics.yaml`. Sixteen rotation topics across three buckets (customer-profile, use-case, standards-competitive). Do not repeat a topic covered in the last two briefs.
 - Gold reference: `agents/research-brief/examples/2026-05-26-agent-identity-stack-takes-shape.json`. Match its voice, length, and structure.
 - Schema: `agents/research-brief/schema/brief.schema.json`. Validate mentally as you write.
 - Style: `agents/research-brief/style.md`. Re-read every run.
-- Context: `agents/research-brief/context/clockchain-overview.md` (public Clockchain info) and `agents/research-brief/context/products-overview.md` (Product A, Product B, stretch products).
+- **Strategic context (load ALL on every run):**
+  - `agents/research-brief/context/session-history.md` — **the complete strategic narrative.** Read this FIRST.
+  - `agents/research-brief/context/clockchain-overview.md` — public Clockchain capability surface.
+  - `agents/research-brief/context/products-overview.md` — Product A (Agent Notarized Identity), Product B (Agent Notarized Receipt), stretches, customer archetypes.
+  - `agents/research-brief/context/product-baseline.md` — v0.2 working layer breakdown (A1-A6, B1-B6).
+  - `agents/research-brief/context/inflection-points.md` — seven live strategic forks; advance at least one per brief.
+  - `agents/research-brief/context/agentdash-sister-product.md` — AgentDash as design-partner-of-record.
+  - `docs/thesis/manifesto-agent-notarized-identity.md` and `docs/thesis/manifesto-agent-notarized-receipt.md` — published manifestos. Match voice. Use canonical names.
 
 ## Your loop (driven by Hermes cron at Tuesday + Friday 7am PT)
 
