@@ -40,9 +40,11 @@ This is the differentiator vs. every existing agent observability stack: LangSmi
 
 ---
 
-## Product A — On-Chain Agent Identity & Cryptographic "Birth Certificates"
+## Product A — Agent Notarized Identity
 
-**What it is.** A protocol for issuing, verifying, and revoking cryptographic identity for autonomous agents. Each agent receives a Decentralized Identifier (DID) on chain — a "birth certificate" that proves provenance, ownership, delegated authority, and policy scope. Smart contracts mint the certificate, attest to capabilities, and enable revocation when an agent goes rogue or is retired.
+> **Branding note:** As of baseline v0.2 (2026-05-26), this product is called **Agent Notarized Identity**, not "Birth Certificate." Identity Digital's DNSid (April 2026) already claims "birth certificate for AI agents" as their category language; the [competitive landscape brief](../../../src/data/briefs/2026-05-26-competitive-landscape-scan.json) lays out the full reasoning for the pivot.
+
+**What it is.** A protocol for issuing, verifying, and revoking court-admissible cryptographic identity for autonomous agents. Each agent receives a Decentralized Identifier (DID) on chain — a *notarized* identity certified by an independent Clockchain validator quorum at the moment of birth, recording the agent's principal chain, delegated scope, capabilities, economic mandate, and revocation state. Smart contracts mint the certificate, attest to capabilities, and enable revocation when an agent goes rogue or is retired.
 
 **The product question Product A answers.** *WHICH agent did this?*
 
@@ -66,9 +68,11 @@ When a brief topic intersects any of those, the tie-back lands on Product A.
 
 ---
 
-## Product B — Clockchain Agent-SDK
+## Product B — Agent Notarized Receipt (delivered via the Clockchain Agent-SDK)
 
-**What it is.** A developer SDK that abstracts the Clockchain network behind a small, ergonomic API. External developers install the SDK, initialize it, and log their first timestamped agent action in fewer than five lines of code. The SDK plugs into the host agent framework's existing callback/tracing surface and emits **signed, timestamped, court-admissible** records to the customer's Clockchain subnet for every LLM call, tool invocation, MCP call, and reasoning step.
+> **Branding note:** As of baseline v0.2 (2026-05-26), the product Clockchain sells is **Agent Notarized Receipt**, not "Smart Receipt." Microsoft's official AI agent documentation already uses "Cryptographic Receipts" as canonical vocabulary; the [competitive landscape brief](../../../src/data/briefs/2026-05-26-competitive-landscape-scan.json) lays out the full reasoning. The SDK is the **mechanism**; the Receipt is the **artifact** customers buy.
+
+**What it is.** A court-admissible record of every meaningful agent action, witnessed by a Clockchain validator quorum, anchored to a multi-source Clockchain timestamp, and produced via the Clockchain Agent-SDK. External developers install the SDK, initialize it, and log their first notarized agent action in fewer than five lines of code. The SDK plugs into the host agent framework's existing callback/tracing surface and emits **signed, timestamped, validator-witnessed** receipts to the customer's Clockchain subnet for every LLM call, tool invocation, MCP call, and reasoning step.
 
 **The product question Product B answers.** *WHAT did the agent do, and can you prove it stands up in a court of law?*
 

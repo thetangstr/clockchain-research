@@ -18,28 +18,43 @@ export default function HomePage() {
             lineHeight: 1.15,
           }}
         >
-          Agentic AI meets verifiable time.
+          The agent notary layer.
         </h1>
         <p
           className="text-lg leading-relaxed mb-10"
           style={{ color: "var(--md-sys-color-on-surface-variant)" }}
         >
-          Twice-weekly voice-optimized research briefs on agent identity, agent
-          SDKs, the on-chain agent economy, blockchain time and attestation, and
-          agent trust. Written to be read aloud on a phone or in a car.
+          Court-admissible identity and receipts for autonomous AI. Research
+          and product thinking on Agent Notarized Identity, Agent Notarized
+          Receipts, and the regulatory clock that makes both inevitable.
         </p>
-        <Link
-          href="/brief"
-          className="inline-flex items-center gap-2 px-5 py-3 rounded-lg text-sm font-semibold transition-all hover:shadow-md"
-          style={{
-            background: "var(--md-sys-color-primary)",
-            color: "var(--md-sys-color-on-primary)",
-            textDecoration: "none",
-          }}
-        >
-          Read the latest brief
-          <span aria-hidden>→</span>
-        </Link>
+        <div className="flex flex-wrap gap-3">
+          <Link
+            href="/brief"
+            className="inline-flex items-center gap-2 px-5 py-3 rounded-lg text-sm font-semibold transition-all hover:shadow-md"
+            style={{
+              background: "var(--md-sys-color-primary)",
+              color: "var(--md-sys-color-on-primary)",
+              textDecoration: "none",
+            }}
+          >
+            Read the latest brief
+            <span aria-hidden>→</span>
+          </Link>
+          <Link
+            href="/manifesto"
+            className="inline-flex items-center gap-2 px-5 py-3 rounded-lg text-sm font-semibold transition-all hover:shadow-md"
+            style={{
+              background: "var(--md-sys-color-surface-container)",
+              color: "var(--md-sys-color-on-surface)",
+              textDecoration: "none",
+              border: "1px solid var(--md-sys-color-outline)",
+            }}
+          >
+            Read the manifestos
+            <span aria-hidden>→</span>
+          </Link>
+        </div>
       </div>
     </div>
   );

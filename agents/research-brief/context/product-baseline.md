@@ -4,15 +4,25 @@
 >
 > **Versioning.** Update the `Baseline version` line below when this file changes. Each brief is implicitly written against a specific baseline version; the diff between versions is the product evolution.
 
-**Baseline version:** v0.1 — 2026-05-26
+**Baseline version:** v0.2 — 2026-05-26
 **Maintainer:** Yang Tang, Head of AI Products at Clockchain
+
+### v0.2 changelog (from v0.1)
+
+The category-defining product names were renamed after the competitive landscape scan ([brief 2026-05-26-competitive-landscape-scan](../../../src/data/briefs/2026-05-26-competitive-landscape-scan.json)) revealed that **"Birth Certificate"** is already claimed by Identity Digital's DNSid (launched April 2026) and **"Cryptographic Receipts"** is in Microsoft's official AI agent documentation. The Clockchain lockup now leads with the **notarization** metaphor — language that maps directly to what a Byzantine-fault-tolerant validator quorum mathematically does, and that no direct competitor currently owns.
+
+- Product A — On-Chain Agent Identity & Cryptographic "Birth Certificates" → **Agent Notarized Identity**
+- Product B — Clockchain Agent-SDK → **Agent Notarized Receipt** (the SDK is the *mechanism*; the receipt is the *product*)
+- Category — Agent Trust Layer / Agent Notary Layer → **Agent Notary Layer**
+
+Layer identifiers (A1–A6, B1–B6) and their internal semantics remain unchanged. Briefs and tie-backs should use the new product names from this version forward.
 
 ---
 
 ## The two products in one sentence each
 
-- **Product A — On-Chain Agent Identity.** *WHICH agent acted, and under what authority.* A cryptographic birth certificate per agent, anchored on the Clockchain network, that proves issuance, delegation, capabilities, and revocation state.
-- **Product B — Clockchain Agent-SDK.** *WHAT the agent did, and can you prove it in a court of law.* A developer SDK that captures every agent action through the host framework, binds each event to the agent's Product A identity, anchors the event to a court-admissible Clockchain timestamp, and emits a Smart Receipt the customer can present to a regulator, auditor, or court.
+- **Product A — Agent Notarized Identity.** *WHICH agent acted, and under what authority.* A court-admissible identity record — issued at agent birth, certified by a Clockchain validator quorum, and recording the agent's principal chain, delegated scope, capabilities, economic mandate, and revocation state.
+- **Product B — Agent Notarized Receipt.** *WHAT the agent did, and can you prove it in a court of law.* A court-admissible artifact — produced via the Clockchain Agent-SDK at the moment of every meaningful agent action, witnessed by a validator quorum, anchored to a multi-source Clockchain timestamp, and presentable to a regulator, auditor, or court as evidence of agent behavior.
 
 The two products are co-dependent. Product A without Product B is identity without a record. Product B without Product A is records without provenance. Sold together, they are the agent-trust primitive that the EU AI Act, eIDAS 2.0, SEC 17a-4, MiFID II, HIPAA, and SOC 2 for AI all require but none of the existing observability vendors can ship.
 
