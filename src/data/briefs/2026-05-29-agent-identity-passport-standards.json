@@ -1,0 +1,44 @@
+{
+  "slug": "2026-05-29-agent-identity-passport-standards",
+  "title": "The agent identity passport landscape six weeks after the stack took shape",
+  "dek": "ERC-8004 adoption is expanding, EU AI Act enforcement is nine weeks away, and the W3C DID v1.1 candidate review window just closed — what those three developments mean for Product A.",
+  "date": "2026-05-29",
+  "dayOfWeek": "Friday",
+  "readTimeMinutes": 7,
+  "topic": "standards-agent-identity-passports",
+  "tldr": "Six weeks after the agent identity stack took shape, three developments are tightening the window for anyone building in this space. ERC eight thousand and four crossed its first full quarter of mainnet activity and is being treated as the on-chain baseline by every new agent identity project. The W3C Decentralized Identifiers version one point one moved into Candidate Recommendation with the public review window closing on the fifth of April, which means the standard is in implementation phase and implementers are making binding design decisions right now. And the European Union's AI Act enforcement date of August second twenty twenty six is nine weeks away, which means the high-risk system identification and logging requirements that Article twelve and Article thirteen impose are no longer a future concern. They are an immediate procurement trigger. For Clockchain's Product A this is the moment the compliance clock and the identity standards clock are ticking in the same direction. The birth certificate for an autonomous agent is not a nice-to-have. It is the thing that EU AI Act Article thirteen makes unavoidable for any high-risk deployer.",
+  "sections": [
+    {
+      "heading": "ERC eight thousand and four is hardening into the on-chain baseline",
+      "body": "The quarter that ended in May was the first full quarter of ERC eight thousand and four mainnet activity, and the pattern is becoming clear. New agent identity projects are treating the three-registry structure — Identity Registry, Reputation Registry, Validation Registry — as the template to build against rather than something to reinvent. The Identity Registry on the ERC seven twenty-one non-fungible token with URI extension is emerging as the portable agent identifier that cross-platform services are beginning to recognize. The Reputation Registry is getting extension proposals for time-weighted scoring, which aligns directly with what the agent credit system and the B5 Receipt Minting Layer would need for timestamped reputation history. The Validation Registry is where the most active ecosystem buildout is happening. Generic validator hooks for zero-knowledge machine-learning verifiers, trusted execution environment oracles, and independent attestors are all being proposed as standard extensions. The door that ERC eight thousand and four left open for Clockchain is still open, and the ecosystem is beginning to organize around the slot."
+    },
+    {
+      "heading": "The W3C DID one point one candidate review closed and the clock is now on implementations",
+      "body": "Decentralized Identifiers version one point one entered Candidate Recommendation with the public review window that closed on the fifth of April. That transition matters for two reasons. First, Candidate Recommendation means the specification is stable enough for implementers to build against without expecting fundamental changes. Second, the W3c process means that any implementation produced during this window has a formal path to becoming a compliant DID method. The DID one point one specification covers the core resolution mechanics, the verification method semantics, and the service endpoint structure. Agent-specific DID method drafts — including the didcolonagent method that some projects are sketching — are building on top of that core. The closing of the public review window is a signal that the base layer is done and the agent-specific work above it is where the activity is now. For Product A the implication is that the W3c DID core is no longer a moving target. The layer above it — the Clockchain DID method, the issuance semantics, the revocation behavior — is where the product differentiation lives and where the engineering work needs to focus."
+    },
+    {
+      "heading": "What this means for our agent products",
+      "body": "This cluster of developments sharpens the Product A roadmap in a way that was not as clear six weeks ago and advances Inflection Point one, identity-first versus SDK-first, toward the identity-first side because the regulatory enforcement clock is now the primary forcing function. The EU AI Act August second twenty twenty six deadline makes Product A a compliance prerequisite for any high-risk deployer nine weeks from now, not a twelve-month roadmap item. On the A1 Issuance Layer, the ERC eight thousand and four three-registry structure validates the birth certificate field taxonomy that was defined in baseline v0.2. The economic mandate field that was added after the agent economy brief now has a direct analogue in the ERC eight thousand and four Reputation Registry extensions being proposed for time-weighted scoring. On the A2 Registry Layer, the W3c DID one point one Candidate Recommendation transition means the DID method implementation work is unblocked. The didcolonclockchain method can now be written against a stable core specification. The Validation Registry slot in ERC eight thousand and four remains the highest-leverage integration point and this brief's findings advance it because the ERC eight thousand and four ecosystem is now actively building out the extension proposals that Clockchain's time-attestation oracle would slot into. The right next move is to publish a one-page integration note showing how Clockchain's five-layer proof-of-time consensus plugs into the ERC eight thousand and four Validation Registry as a court-admissible validator hook, and to circulate it to the ERC eight thousand and four implementer community before the extension proposals harden."
+    }
+  ],
+  "keyPoints": [
+    "ERC-8004 is hardening into the agent identity on-chain baseline with active extension proposals for time-weighted reputation and validator hook patterns.",
+    "W3C DID v1.1 moved to Candidate Recommendation in April 2026, which unblocks the Clockchain DID method implementation against a stable core specification.",
+    "EU AI Act enforcement on August 2, 2026 makes Product A a nine-week compliance procurement trigger for high-risk deployers, not a future roadmap item.",
+    "The ERC-8004 Validation Registry slot remains the highest-leverage integration target for Clockchain's time-attestation oracle.",
+    "Inflection Point 1 advances toward identity-first because the regulatory enforcement clock is now the primary forcing function."
+  ],
+  "nextUp": [
+    "Walk me through how Product A's A2 Registry Layer should implement the didcolonclockchain method against the W3C DID v1.1 Candidate Recommendation.",
+    "Which of the ERC eight thousand and four extension proposals for the Validation Registry should Clockchain target first.",
+    "What does the A1 economic mandate field look like as an ERC eight thousand and four Reputation Registry extension."
+  ],
+  "sources": [
+    { "title": "ERC-8004: Trustless Agents — Ethereum EIPs", "url": "https://eips.ethereum.org/EIPS/eip-8004" },
+    { "title": "W3C Invites Implementations of Decentralized Identifiers (DIDs) v1.1", "url": "https://www.w3.org/news/2026/w3c-invites-implementations-of-decentralized-identifiers-dids-v1-1/" },
+    { "title": "The missing infrastructure for AI agents: 5 ways blockchains can help — a16z crypto", "url": "https://a16zcrypto.com/posts/article/5-ways-blockchains-help-ai-agents/" },
+    { "title": "AI Agent Passport: The Permanent Identity Layer for Autonomous AI — RNWY", "url": "https://rnwy.com/learn/ai-agent-passport" },
+    { "title": "Passport, please! AI agents are becoming first-class citizens with ERC-8004 & OriginTrail", "url": "https://medium.com/origintrail/passport-please-ai-agents-are-becoming-first-class-citizens-with-erc-8004-origintrail-27fb90af8af9" },
+    { "title": "Ethereum Attestation Service — attest.org", "url": "https://attest.org/" }
+  ]
+}
