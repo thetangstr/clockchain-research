@@ -58,9 +58,9 @@ becomes:
 
 Always include a section titled exactly **"What this means for our agent products"** as the LAST section. It must:
 
-- Map the week's findings to one or more of:
-  - **Product A** (Agent DID / Birth Certificates) — what new identity standards, threats, or interop opportunities appeared.
-  - **Product B** (Clockchain Agent-SDK) — what integration surfaces, framework hooks, or DX expectations emerged.
+- Map the week's findings to one or more of (use canonical baseline-v0.2 names):
+  - **Agent Notarized Identity** (Product A) — what new identity standards, threats, or interop opportunities appeared. Cite the layer touched (A1–A6).
+  - **Agent Notarized Receipt** (Product B, via the Clockchain Agent-SDK) — what integration surfaces, framework hooks, or DX expectations emerged. Cite the layer touched (B1–B6).
   - **Agent Credit System** (stretch) — what payment, credit, or reputation patterns are converging.
   - **Agent Smart Receipts** (stretch) — what receipt, attestation, or audit patterns are maturing.
   - **AI-First Org** (stretch) — when relevant, what internal-agent patterns from the broader market apply.
@@ -81,7 +81,7 @@ Always include a section titled exactly **"What this means for our agent product
 
 The 3 `nextUp` questions must be phrased exactly as the user would speak them aloud to a Gemini voice agent. Examples:
 
-- "Tell me more about how cryptographic agent identity changes the Product A roadmap."
+- "Tell me more about how cryptographic agent identity changes the Agent Notarized Identity roadmap."
 - "Which agent framework should the Clockchain Agent-SDK target next and why."
 - "What did this week's findings imply for the agent credit system."
 

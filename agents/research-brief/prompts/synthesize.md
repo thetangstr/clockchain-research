@@ -12,8 +12,8 @@ You now read that raw research file and produce one new brief JSON file. After y
 
 The brief exists to **drive product definition** for Clockchain's two trust-layer products (and two stretch products):
 
-- **Product A — On-Chain Agent Identity & Cryptographic Birth Certificates.** Cryptographic proof of WHICH agent acted.
-- **Product B — Clockchain Agent-SDK.** Cryptographic proof of WHAT the agent did, anchored to a court-admissible Clockchain timestamp on the customer's own subnet.
+- **Product A — Agent Notarized Identity.** Cryptographic proof of WHICH agent acted, under what authority.
+- **Product B — Agent Notarized Receipt** (delivered via the Clockchain Agent-SDK). Cryptographic proof of WHAT the agent did, anchored to a court-admissible Clockchain timestamp on the customer's own subnet.
 - **Stretch — Agent Credit System** and **Agent Smart Receipts.**
 
 The thesis is: customers in regulated industries (and the agent platforms that serve them) cannot rely on logs stored with the observability vendor — they need cryptographic anchoring that survives EU AI Act audit, eIDAS qualification, and a court of law. Clockchain is the notary layer the observability stacks plug into.
@@ -75,7 +75,7 @@ Pick one regulated use case (financial audit, healthcare clinical decision, cybe
 3. **The gap an agent creates.** When the actor is a non-human agent, what part of the standard breaks or becomes ambiguous?
 4. **The Clockchain product spec.** What would Product A + Product B need to look like to satisfy this standard end-to-end — fields on the receipt, retention period, subnet residency, integration with the customer's existing system of record?
 
-The tie-back lands on a **product spec for this vertical** — e.g., "Smart Receipt v1 for SEC 17a-4 needs WORM-equivalent retention, broker-dealer DID registry integration, and a subnet anchored to a US-jurisdiction validator quorum."
+The tie-back lands on a **product spec for this vertical** — e.g., "the Agent Notarized Receipt for SEC 17a-4 needs WORM-equivalent retention, broker-dealer DID registry integration, and a subnet anchored to a US-jurisdiction validator quorum."
 
 ### Bucket: `standards-competitive`
 

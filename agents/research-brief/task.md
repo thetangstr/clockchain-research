@@ -16,15 +16,13 @@ Tuesday and Friday at 7:00am America/Los_Angeles. Scheduled by `schedule/com.clo
 
 ## Topic rotation
 
-Five tracks. Pick one that was **not** covered in the last two briefs.
+**`config/topics.yaml` is the source of truth.** The current rotation is sixteen topics across three buckets (it superseded the original five generic tracks). Pick one not covered in the last two briefs; `scripts/pick-topic.sh` automates this. If you pick manually, cross-check the two latest filenames in `src/data/briefs/`.
 
-1. **agent-identity-and-did** — W3C DID specs, did:web / did:key / agent-specific DID methods, ENS-for-agents, attestation protocols (EAS, Verax), agent passport projects, cryptographic agent provenance research. Feeds Product A.
-2. **agent-frameworks-and-sdks** — LangChain, AutoGPT, CrewAI, AutoGen, LlamaIndex, MCP servers, Anthropic Agent SDK, OpenAI Agents SDK; what observability and logging hooks each exposes and what is missing. Feeds Product B's integration surface.
-3. **on-chain-agent-economy** — Agent payments (x402, Coinbase agent payments, Skyfire), agent credit systems, smart receipts, autonomous agent treasuries, agent-to-agent commerce. Feeds the stretch products.
-4. **blockchain-time-and-attestation** — Verifiable timestamps for AI outputs, on-chain audit trails, Chainlink Functions for AI verification, ZK proofs of agent execution, EAS attestation patterns, AI compliance audit-trail requirements. Feeds the core Clockchain x agent thesis.
-5. **agent-security-and-trust** — Agent-to-agent authentication, prompt-injection defenses tied to cryptographic identity, on-chain agent permissions, agent rights frameworks (Story Protocol), MITRE ATLAS, regulatory pressure on AI accountability (EU AI Act, SOC 2 for agents). Feeds Product A's moat narrative.
+The three buckets, and how `synthesize.md` frames each:
 
-`scripts/pick-topic.sh` automates the selection. If you pick manually, double-check by reading the two latest filenames in `src/data/briefs/`.
+1. **customer-profile** (~45%) — one specific company per brief (LangChain/LangSmith, Anthropic Agent SDK, OpenAI Agents SDK, OSS frameworks, observability vendors, embedded-agent products, AgentDash). Frame: what they do today → the compliance gap → where Clockchain plugs in → the buyer.
+2. **use-case** (~30%) — one regulated vertical per brief (financial audit, healthcare, cybersecurity SOC, legal eDiscovery, regulated-SaaS internal agents). Frame: the evidentiary standard → state of the art → the gap an agent creates → the Clockchain product spec. The ranked priority across verticals lives in `context/industry-evaluation-framework.md`.
+3. **standards-competitive** (~25%) — one law or competing product per brief (EU AI Act, eIDAS 2.0 / RFC 3161 / ISO-IEC 18014 / ESIGN, agent identity passports, agent economy, competitive landscape scans). Frame: the clock → the technical requirement → Clockchain's position → the forcing function.
 
 ## What "good" looks like
 
@@ -37,7 +35,7 @@ Match the gold reference seed brief in `examples/`:
 - **`keyPoints`**: 3-5 short declarative sentences.
 - **`nextUp`**: exactly 3 follow-up questions, each phrased as the user would speak it aloud.
 - **`sources`**: 6-10 real URLs with descriptive titles.
-- **Always include a "What this means for our agent products" section** as the LAST section. Tie findings to Product A, Product B, the agent credit system, agent smart receipts, or the AI-first-org thread. Two or three of those buckets per brief is typical.
+- **Always include a "What this means for our agent products" section** as the LAST section. Per `synthesize.md` it must cite a Product A/B layer (A1–A6 / B1–B6), advance one inflection point, map to AgentDash when relevant, and end with a concrete "The right next move is…" action. Tie findings to Agent Notarized Identity (Product A), Agent Notarized Receipt (Product B), the agent credit system, agent smart receipts, or the AI-first-org thread.
 
 ## Voice rules
 
