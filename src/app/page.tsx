@@ -42,6 +42,19 @@ export default function HomePage() {
             <span aria-hidden>→</span>
           </Link>
           <Link
+            href="/weekly"
+            className="inline-flex items-center gap-2 px-5 py-3 rounded-lg text-sm font-semibold transition-all hover:shadow-md"
+            style={{
+              background: "var(--md-sys-color-surface-container)",
+              color: "var(--md-sys-color-on-surface)",
+              textDecoration: "none",
+              border: "1px solid var(--md-sys-color-outline)",
+            }}
+          >
+            Weekly digest
+            <span aria-hidden>→</span>
+          </Link>
+          <Link
             href="/brief"
             className="inline-flex items-center gap-2 px-5 py-3 rounded-lg text-sm font-semibold transition-all hover:shadow-md"
             style={{
