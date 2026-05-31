@@ -24,13 +24,13 @@ export default function HomePage() {
           className="text-lg leading-relaxed mb-10"
           style={{ color: "var(--md-sys-color-on-surface-variant)" }}
         >
-          Court-admissible identity and receipts for autonomous AI. Research
-          and product thinking on Agent Notarized Identity, Agent Notarized
+          Court-grade identity and receipts for autonomous AI. Research and
+          product thinking on Agent Notarized Identity, Agent Notarized
           Receipts, and the regulatory clock that makes both inevitable.
         </p>
         <div className="flex flex-wrap gap-3">
           <Link
-            href="/brief"
+            href="/product"
             className="inline-flex items-center gap-2 px-5 py-3 rounded-lg text-sm font-semibold transition-all hover:shadow-md"
             style={{
               background: "var(--md-sys-color-primary)",
@@ -38,7 +38,20 @@ export default function HomePage() {
               textDecoration: "none",
             }}
           >
-            Read the latest brief
+            Read the product paper
+            <span aria-hidden>→</span>
+          </Link>
+          <Link
+            href="/brief"
+            className="inline-flex items-center gap-2 px-5 py-3 rounded-lg text-sm font-semibold transition-all hover:shadow-md"
+            style={{
+              background: "var(--md-sys-color-surface-container)",
+              color: "var(--md-sys-color-on-surface)",
+              textDecoration: "none",
+              border: "1px solid var(--md-sys-color-outline)",
+            }}
+          >
+            Latest brief
             <span aria-hidden>→</span>
           </Link>
           <Link
@@ -51,7 +64,7 @@ export default function HomePage() {
               border: "1px solid var(--md-sys-color-outline)",
             }}
           >
-            Read the manifestos
+            Manifestos
             <span aria-hidden>→</span>
           </Link>
         </div>
